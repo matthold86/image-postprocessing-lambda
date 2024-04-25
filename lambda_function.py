@@ -105,5 +105,8 @@ def lambda_handler(event, context):
     logger.info(str(datetime.now()) + f": Postprocessing - Successfully post-processed and uploaded the final image to {target_key}")
     
     return {
-        'statusCode': 200,
+        "Payload": {
+            "bucket_name": bucket_name,
+            "postprocessed_objectkey": target_key
+        }
     }
